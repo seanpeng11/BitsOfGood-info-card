@@ -13,12 +13,20 @@ html {
     cursor: pointer;
     box-shadow: 0 10px 40px 2px rgba(255, 255, 255, 0.4);
     background: #2e373e;
+    transform-origin: center center 0px;
+    transition: all 0.5s ease-out;
     animation: card-hover 3s ease-in-out infinite;
     transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card:hover {
+    animation: unset;
+    margin-top: 31vh;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
 }
 
 @keyframes card-hover {
