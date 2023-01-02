@@ -8,6 +8,7 @@ html {
 .card {
     width: 450px;
     height: 300px;
+    position: relative;
     margin: auto;
     border-radius: 5px;
     cursor: pointer;
@@ -17,10 +18,8 @@ html {
     transition: all 0.5s ease-out;
     animation: card-hover 3s ease-in-out infinite;
     transform: perspective(1000px) rotateX(35deg) rotateY(4deg) rotateZ(-30deg);
+    transform-style: preserve-3d;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .card:hover {
@@ -39,4 +38,26 @@ html {
     100% {
         margin-top: 28vh;
     }
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    background-color: #2e373e;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
 }
