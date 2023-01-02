@@ -21,11 +21,16 @@ html {
     transform-style: preserve-3d;
     color: white;
 }
-
+.card.flipped {
+    transform: perspective(1000px) rotateX(35deg) rotateY(184deg) rotateZ(30deg);
+}
 .card:hover {
     animation: unset;
     margin-top: 31vh;
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+.card:hover.flipped {
+    transform: perspective(1000px) rotateX(0deg) rotateY(180deg) rotateZ(0deg);
 }
 
 @keyframes card-hover {
@@ -58,6 +63,3 @@ html {
     transform: rotateY(180deg);
 }
 
-.card.flipped {
-    transform: rotateY(180deg);
-}
